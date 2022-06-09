@@ -1,6 +1,6 @@
 import React from "react";
 import "../component/todos.css";
-import {Card,CardContent,Grid,ListItemButton,ListItemText,Checkbox,} from "@mui/material";
+import {Card,CardContent,Grid,ListItemButton,ListItemText,Checkbox,} from "@mui/material"; // div components already styled
 
 // 1. This component formats and returns the list of todos.
 // 2. Treat the question mark like an if statement.
@@ -10,7 +10,7 @@ import {Card,CardContent,Grid,ListItemButton,ListItemText,Checkbox,} from "@mui/
 // 4. Think of lines 14-23 as a loop. For each todo in the todo list, we want to give the list item
 // a key, and it's own card shown in the UI
 const Todos = ({ todos }) => {
-    const todoList = todos.length ? (
+    const todoList = todos.length ? ( // if the todo list has a length, want to map every item and give each item a card
       todos.map((todo) => {
         return (
           <Grid key={todo.id}>

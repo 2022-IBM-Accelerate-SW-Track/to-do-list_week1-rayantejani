@@ -7,7 +7,7 @@ class AddTodo extends Component {
     constructor() {
       super();
       this.state = {
-        content: "",
+        content: "", // content that will be typed in text box
       };
     }
     // The handleChange function updates the react state with the new input value provided from the user.
@@ -15,7 +15,7 @@ class AddTodo extends Component {
     // into the text field.
     handleChange = (event) => {
       this.setState({
-        content: event.target.value,
+        content: event.target.value, // grab what's in text box and set content to that
       });
     };
     // The handleSubmit function collects the forms input and puts it into the react state.
@@ -24,10 +24,10 @@ class AddTodo extends Component {
     // in the Home.js file which then adds the input into the list.
     handleSubmit = (event) => {
       event.preventDefault();
-      if (this.state.content.trim()) {
+      if (this.state.content.trim()) { // catching for empty input ; can't add empty to do item
         this.props.addTodo(this.state);
         this.setState({
-          content: "",
+          content: "", // resetting the text box
         });
       }
     };
@@ -43,7 +43,7 @@ class AddTodo extends Component {
             label="Add New Item"
             variant="outlined"
             onChange={this.handleChange}
-            value={this.state.content} // not sure if working
+            value={this.state.content}
           />
           <Button
             style={{ marginLeft: "10px" }}
